@@ -1,6 +1,6 @@
 
-use: npm i
-for dependences
+use: npm i 
+//for dependences
 
 start server  at "./server/server.js"
 
