@@ -1,0 +1,40 @@
+{
+    "name": "RF",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+        "watch": "webpack --watch --mode development --info false",
+        "build": "webpack --mode development"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "babel": {
+        "presets": [
+            "env",
+            "react",
+            "stage-2"
+        ]
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.4",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "react-hot-loader": "^4.3.0",
+        "webpack": "^4.11.1",
+        "webpack-cli": "^3.0.3",
+        "webpack-dev-server": "^3.1.4"
+    },
+    "dependencies": {
+        "create-react-class": "^15.6.3",
+        "react": "^16.4.0",
+        "react-dom": "^16.4.0",
+        "socket.io": "^2.1.1",
+        "socket.io-client": "^2.1.1",
+        "soundmanager2": "^2.97.20170602"
+    }
+}
