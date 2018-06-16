@@ -6,18 +6,19 @@ var crypto = require("crypto");
 
 var GameResult = require("./game/GameLogic")
 
+
+
 //initial logs
-io.on("connection", game.createPlayer)
+// io.on("connection", game.createPlayer)
 
 
 //main
 io.on('connection', (socket) => {
 
-
     //creating the room for two players
     socket.on("addMeInPair", (data) => {
-
-        //cheking is anyone waiting for 
+        console.log("new client", data.opponenturl)
+            //cheking is anyone waiting for 
         if (io.sockets.adapter.sids[data.opponenturl] == undefined) {
             //no such connected id
             socket.emit("incorrectId", { content: "There are no player with such ID" });
@@ -55,9 +56,9 @@ io.on('connection', (socket) => {
         //find other socket id in this room
         //chek for this ws iD in PairsMap
         let roomsid = Object.keys(socket.rooms);
-        console.log("rooms", roomsid);
+        // console.log("rooms", roomsid);
         let otherRoomId = "";
-        console.log("adapter", io.nsps["/"].adapter.rooms[roomsid[1]])
+        // console.log("adapter", io.nsps["/"].adapter.rooms[roomsid[1]])
         let roomName = io.nsps["/"].adapter.rooms[roomsid[1]].sockets
         for (prop in roomName) {
             if (prop !== socket.id) {
@@ -99,7 +100,7 @@ io.on('connection', (socket) => {
     //clean results and start new game
     socket.on("RepeatGame", (data) => {
         let roomsid = Object.keys(socket.rooms);
-        console.log("rooms", roomsid);
+        // console.log("rooms", roomsid);
         socket.emit("opponentChooseTheCard");
     });
 
@@ -109,9 +110,6 @@ io.on('connection', (socket) => {
         io.in(socket.roomID).emit("yorOppenentLeavesTheGame");
     });
 })
-
-
-
 
 server.listen(9999, () => {
     console.log("listening on http://localhost:9999")

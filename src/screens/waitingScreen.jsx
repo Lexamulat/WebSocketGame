@@ -5,11 +5,12 @@ class WaitingScreen extends React.Component {
     constructor(props) {
         super(props)
         ioConn.on("seting", (data) => {
+        console.log("IoConsqwn",ioConn.io.engine.id)
+        
+            
             return this.changeAfter(data.seturl)
         });
-        // ioConn.on("seting", (data) => {
-        //     return this.changeAfter(data.seturl)
-        // });
+       
         this.state = {
             curr: "while",
             url: ""
@@ -27,7 +28,6 @@ handleChange(){}
     }
 
     displayWaitingScreen() {
-   
         return (
             <div className="waitngScreen">
                 <form className="linkBlock">

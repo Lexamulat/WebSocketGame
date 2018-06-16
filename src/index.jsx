@@ -1,13 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-
 import ioConn from './socket'
-
 import WaitingScreen from "./screens/waitingScreen"
 import GameScreen from "./screens/GameScreen/GameScreen"
-
-
-
 
 
 class ScreenManager extends React.Component {
@@ -29,7 +24,6 @@ console.log("game is start")
     this.changeSreenToGame = this.changeSreenToGame.bind(this);
   }
   componentWillMount(){
-
     this.isThisAnInvitedPerson()
   }
 notification(data){
@@ -67,7 +61,6 @@ notification(data){
 
   isThisAnInvitedPerson(){
     var str = document.location.href.substr((document.location.href.lastIndexOf("/")) + 1)
-    console.log(document.location.href)
     if (str!==""){
       ioConn.emit("addMeInPair", { opponenturl: str.substr(1) });
     }
