@@ -26,6 +26,15 @@ body {
     align-items: center;
 }
 
+.resultGameBlock {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .finalPageButtons {
     display: flex;
     justify-content: space-evenly;
@@ -80,20 +89,27 @@ body {
 .cards {
     flex: 3;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap
 }
 
 .svgicon {
-    z-index: 2;
+    /* z-index: 2; */
+    width: 100%;
+    height: 100%;
     stroke-width: 0;
     fill: rgb(19, 17, 17);
 }
 
+.centeredIcon {
+    width: 50%;
+    height: 50%;
+}
+
 .cart {
-    margin: 2em;
-    height: 8vh;
-    width: 15vw;
+    /* margin: 5em; */
+    height: 20vh;
+    width: 30vw;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -101,8 +117,14 @@ body {
     transition: all 0.5s ease;
 }
 
+.finalCards {
+    flex: 2;
+}
+
 .finalText {
-    font: 2rem;
+    flex: 1;
+    /* font-size: 2rem; */
+    /* fo: 2rem; */
 }
 
 .Bigcart {

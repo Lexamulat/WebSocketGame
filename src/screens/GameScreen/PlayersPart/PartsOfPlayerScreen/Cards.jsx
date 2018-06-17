@@ -65,25 +65,25 @@ class Cards extends React.Component {
 
     displayBigCard() {
         return (
-        <svg className="svgicon " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 32 32 "><path d={this.state.mas[this.state.showBigCard]}></path>
+        <svg className="svgicon centeredIcon " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 32 32 "><path d={this.state.mas[this.state.showBigCard]}></path>
             </svg>
        
         )
       }
-
+    //   className="finalCards"
       displayEndOfGameScreen() {
       return( <div className="resultGameBlock">
-       <strong className="finalText">{this.state.gameResult}</strong>
-          <strong>You have chosen this card.</strong>
-          <div>
-          <svg className="svgicon" xmlns="http://www.w3.org/2000/svg " viewBox="0 0 32 32 "><path d={this.state.mas[this.state.yCard]}></path>
+       <strong className="finalText">{this.state.gameResult} You have chosen this card.</strong>
+          {/* <strong className="finalText">You have chosen this card.</strong> */}
+       
+          <svg className="finalCards" xmlns="http://www.w3.org/2000/svg " viewBox="0 0 32 32 "><path d={this.state.mas[this.state.yCard]}></path>
             </svg>
-            </div>
-          <strong>And your opponent have chosen this card.</strong>
-        <div>
-          <svg  className="svgicon" xmlns="http://www.w3.org/2000/svg " viewBox="0 0 32 32 "><path d={this.state.mas[this.state.opoonentCard]}></path>
+            
+          <strong className="finalText"> And your opponent have chosen this card.</strong>
+       
+          <svg  className="finalCards" xmlns="http://www.w3.org/2000/svg " viewBox="0 0 32 32 "><path d={this.state.mas[this.state.opoonentCard]}></path>
             </svg>
-            </div>
+            
           <div className="finalPageButtons">
           <div className="repeatButton" onClick={() => this.repeatGame()}>Repeat game</div>
           <div className="leaveButton" onClick={() => this.leaveGame()}>Leave this room</div>
