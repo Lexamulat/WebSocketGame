@@ -17,7 +17,7 @@ class Chat extends React.Component {
             
             return this.newMessageFromServer(data.content)
         });
-        
+        this.submit = this.submit.bind(this);
     }
     newMessageFromServer(newcontent){
         soundManager.soundManager.play('mySound')
@@ -27,19 +27,19 @@ class Chat extends React.Component {
             })
 }
 
-   submit = event => {
-    this.scrollTop = 9999;
-    event.preventDefault()
-       let message= event.target.elements.input
-       ioConn.emit("newMessageFromClient", { content: message.value });
-        this.state.messages.push("You :"+message.value)
-        message.value=""
-
-    this.setState({
-    messages: this.state.messages
-    })
-   }
    
+submit(event){
+        this.scrollTop = 9999;
+        event.preventDefault()
+           let message= event.target.elements.input
+           ioConn.emit("newMessageFromClient", { content: message.value });
+            this.state.messages.push("You :"+message.value)
+            message.value=""
+    
+        this.setState({
+        messages: this.state.messages
+        })      
+}
   
     render() {
         var mes =this.state.messages.map( (item, i)=> {
@@ -64,8 +64,8 @@ soundManager.soundManager.setup({
     onready: function() {
       console.log("sound")
       soundManager.soundManager.createSound({
-        id: 'mySound', // Тот самый ID
-        url: './1.mp3' // Путь до музыкального файла
+        id: 'mySound', 
+        url: './1.mp3' 
        });
   
        soundManager.soundManager.play('mySound')

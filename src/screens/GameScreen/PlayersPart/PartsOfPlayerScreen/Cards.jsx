@@ -100,10 +100,7 @@ class Cards extends React.Component {
             </div>
         })
         return (<div className="playersPart">
-            {/* <div className="inscription">
-            <div id="inTurnFadingTextG"><div id="inTurnFadingTextG_1" className="inTurnFadingTextG">Ma</div><div id="inTurnFadingTextG_2" className="inTurnFadingTextG">ke</div><div id="inTurnFadingTextG_3" className="inTurnFadingTextG">&nbsp;yo</div><div id="inTurnFadingTextG_4" className="inTurnFadingTextG">uг</div><div id="inTurnFadingTextG_5" className="inTurnFadingTextG">&nbsp;ch</div><div id="inTurnFadingTextG_6" className="inTurnFadingTextG">o</div><div id="inTurnFadingTextG_7" className="inTurnFadingTextG">ic</div><div id="inTurnFadingTextG_8" className="inTurnFadingTextG">e</div></div>
-              
-              </div>  */}
+         
             <div className="cards">
                 {
                   t  
@@ -115,7 +112,7 @@ class Cards extends React.Component {
             if (this.state.screen == "endOfGame"){
                 return this.displayEndOfGameScreen()
             }else{
-return this.displayBigCard()
+                return this.displayBigCard()
             }
         }
 

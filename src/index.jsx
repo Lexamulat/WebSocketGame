@@ -12,7 +12,7 @@ class ScreenManager extends React.Component {
    
     ioConn.on("gameStart", (data) => {
 console.log("game is start")
-      return this.changeSreenToGame()
+      this.changeSreenToGame()
     })
     ioConn.on("incorrectId", (data) => {
       return this.notification(data.content)
@@ -21,7 +21,6 @@ console.log("game is start")
     this.state = {
       screen: "wait"
     }
-    this.changeSreenToGame = this.changeSreenToGame.bind(this);
   }
   componentWillMount(){
     this.isThisAnInvitedPerson()
@@ -77,12 +76,6 @@ notification(data){
     }
   }
 }
-
-
-
-
-// console.log(document.location.href)
-
 
 
 
